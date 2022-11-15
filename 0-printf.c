@@ -19,9 +19,7 @@ int _printf(const char *format, ...)
 
 	va_start(arg, format);
 
-	i = 0;
-
-	for (*traverse = i; *traverse != '\0'; traverse++)
+	for (i = 0; i < *traverse; i++)
 
 
 			traverse = malloc(format[i]);
