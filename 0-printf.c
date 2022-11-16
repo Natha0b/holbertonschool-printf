@@ -21,22 +21,21 @@ int _printf(const char *format, ...)
 
 	for (i = 0; i < *traverse; i++)
 
-
-			traverse = malloc(format[i]);
+		traverse = malloc(format[i]);
 
 	if (traverse == NULL)
 	{
 		return (0);
 	}
 
-	while (*traverse != '%')
+	while (*format != '%')
 	{
-		_putchar(*traverse);
-		traverse++;
+		_putchar(*format);
+		format++;
 	}
-	traverse++;
+	format++;
 
-	switch (*traverse)
+	switch (*format + 1)
 	{
 	case 'c':
 		c = (char)va_arg(arg, int);
@@ -53,5 +52,5 @@ int _printf(const char *format, ...)
 	}
 
 	va_end(arg);
-	return (*traverse);
+	return (*format);
 }
