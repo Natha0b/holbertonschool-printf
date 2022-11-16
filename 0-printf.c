@@ -12,30 +12,35 @@
 int _printf(const char *format, ...)
 {
 
-	char *traverse, *s;
+	char *traverse = NULL, *s;
 	unsigned int c;
 	int i;
 	va_list(arg);
 
 	va_start(arg, format);
 
-	for (i = 0; i < *traverse; i++)
+	for (i = 0; format[i]  != '\0'; i++)
 
-		traverse = malloc(format[i]);
+	traverse = malloc(i + 1);
 
 	if (traverse == NULL)
 	{
 		return (0);
 	}
+	for
 
-	while (*format != '%')
+	while (*traverse != '\0')
 	{
-		_putchar(*format);
-		format++;
-	}
-	format++;
+		_putchar(*traverse);
+		traverse++;
 
-	switch (*format + 1)
+		if ( *traverse != %)
+		{
+			_putchar(*traverse)
+			traverse++;
+		}
+
+	switch (*traverse + 1)
 	{
 	case 'c':
 		c = (char)va_arg(arg, int);
@@ -45,12 +50,19 @@ int _printf(const char *format, ...)
 		s = va_arg(arg, char *);
 		puts(s);
 		break;
+	case '%':
+		% = (char)va_arg(arg, int);
+		_putchar(%);
+		break;
+	
 
 	default:
 
-		break;
+		continue;
+	}
+	write
 	}
 
 	va_end(arg);
-	return (*format);
+	return (*traverse);
 }
