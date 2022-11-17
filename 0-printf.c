@@ -13,8 +13,7 @@
 int _printf(const char *format, ...)
 {
 
-	char *traverse = NULL, *s;
-	unsigned int c;
+	char *traverse = NULL;
 	int i;
 	va_list(arg);
 
@@ -37,7 +36,7 @@ int _printf(const char *format, ...)
 			/*_putchar(*traverse);
 			traverse++;
 
-			/*if (*traverse != '%')
+			if (*traverse != '%')
 			{
 				_putchar(*traverse);
 					traverse++;
