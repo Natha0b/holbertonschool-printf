@@ -16,6 +16,7 @@ int _printf(const char *format, ...)
 	char *traverse = NULL, *s = NULL;
 	int c = 0;
 	int i;
+	int aux = 0;
 	va_list(arg);
 
 	va_start(arg, format);
@@ -32,17 +33,18 @@ int _printf(const char *format, ...)
 		return (0);
 	}
 
-	while (format[i] != '\0')
+
+	while (format[aux] != '\0')
 	{
 
-
-		if (format[i] != '%')
+		if (format[aux] != '%')
 		{
-			_putchar(format[i]);
-			format++;
+			_putchar(format[aux]);
 		}
 
-		switch (*traverse + 1)
+		if (format[aux] == '%')
+		{
+		switch (format[aux + 1])
 		{
 		case 'c':
 			c = (char)va_arg(arg, int);
@@ -65,6 +67,8 @@ int _printf(const char *format, ...)
 
 			continue;
 		}
+		}
+		aux++;
 	}
 
 	va_end(arg);
