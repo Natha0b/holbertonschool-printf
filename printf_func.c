@@ -11,7 +11,7 @@ int function_char(va_list valist)
 }
 
 
-/*
+
 /**
  * function_s - prints the integer
  * @arg: args

@@ -5,16 +5,16 @@
 #include <unistd.h>
 
 /**
- *_printf- print a variable
- *@format: variable printf
- *Return: the number of characters printed
+ * _printf - print a variable
+ * @format: variable printf
+ * Return: the number of characters printed
  */
 
 int _printf(const char *format, ...)
 {
 	va_list arg;
-	char *traverse = NULL, *s = NULL;
-	int c = 0, i, aux = 0;
+	char *traverse = NULL;
+	int i, aux = 0;
 
 	va_start(arg, format);
 
