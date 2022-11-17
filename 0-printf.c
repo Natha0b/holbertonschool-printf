@@ -12,12 +12,9 @@
 
 int _printf(const char *format, ...)
 {
-
+	va_list arg;
 	char *traverse = NULL, *s = NULL;
-	int c = 0;
-	int i;
-	int aux = 0;
-	va_list(arg);
+	int c = 0, i, aux = 0;
 
 	va_start(arg, format);
 
@@ -25,53 +22,54 @@ int _printf(const char *format, ...)
 		return (0);
 
 	for (i = 0; format[i] != '\0'; i++)
+	{
 
-		traverse = malloc(i + 1);
+	}
+
+	traverse = malloc(i + 1);
 
 	if (traverse == NULL)
 	{
 		return (0);
 	}
 
+	i = 0;
 
-	while (format[aux] != '\0')
+	while (format[i] != '\0')
 	{
 
-		if (format[aux] != '%')
+		if (format[i] != '%')
 		{
 			_putchar(format[aux]);
+			aux++;
 		}
 
-		if (format[aux] == '%')
+		if (format[i] == '%')
 		{
-		switch (format[aux + 1])
-		{
-		case 'c':
-			c = (char)va_arg(arg, int);
-			write(1, &c, 1);
-			return (1);
-			break;
-		case 's':
-			s = va_arg(arg, char *);
-			write(1, &s, 1);
-			return (1);
-			break;
-		case '%':
-			c = (char)va_arg(arg, int);
-			write(1, &c, 1);
-			return (1);
-			break;
+			while (format[i++] == ' ');
+			switch (format[i])
+			{
+			case 'c':
+				function_char(arg);
+				aux++;
+				break;
+			/*case 's':
+				s = va_arg(arg, char *);
+				write(1, &s, 1);
+				break;
+			case '%':
+				c = '%';
+				write(1, &c, 1);
+				break;*/
 
-		default:
-		return (1);
+			default:
 
-			continue;
+				continue;
+			}
 		}
-		}
-		aux++;
+		i++;
 	}
 
-
 	va_end(arg);
-	return (format[aux]);
+	return (aux);
 }
