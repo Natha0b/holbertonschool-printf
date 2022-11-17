@@ -13,8 +13,8 @@
 int _printf(const char *format, ...)
 {
 
-	char *traverse = NULL, *s;
-	unsigned int c;
+	char *traverse = NULL, *s = NULL;
+	int c = 0;
 	int i;
 	va_list(arg);
 
@@ -32,38 +32,40 @@ int _printf(const char *format, ...)
 		return (0);
 	}
 
-		while (*traverse != '\0')
+	while (format[i] != '\0')
+	{
+
+
+		if (format[i] != '%')
 		{
-			/*_putchar(*traverse);
-			traverse++;
-
-			if (*traverse != '%')
-			{
-				_putchar(*traverse);
-					traverse++;
-			}*/
-
-			switch (*traverse + 1)
-			{
-			case 'c':
-				c = (char)va_arg(arg, int);
-				write(1, &traverse, 1);
-				return (1);
-				break;
-			case 's':
-				s = va_arg(arg, char *);
-				write(1, &traverse, 1);
-				break;
-			case '%':
-				c = (char)va_arg(arg, int);
-				write(1, &traverse, 1);
-				break;
-
-			default:
-
-				continue;
-			}
+			_putchar(format[i]);
+			format++;
 		}
+
+		switch (*traverse + 1)
+		{
+		case 'c':
+			c = (char)va_arg(arg, int);
+			write(1, &c, 1);
+			return (1);
+			break;
+		case 's':
+			s = va_arg(arg, char *);
+			write(1, &s, 1);
+			return (1);
+			break;
+		case '%':
+			c = (char)va_arg(arg, int);
+			write(1, &c, 1);
+			return (1);
+			break;
+
+		default:
+		return (1);
+
+			continue;
+		}
+	}
 
 	va_end(arg);
 	return (*traverse);
