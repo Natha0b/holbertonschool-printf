@@ -71,6 +71,7 @@ int _printf(const char *format, ...)
 		aux++;
 	}
 
+
 	va_end(arg);
-	return (*traverse);
+	return (format[aux]);
 }
