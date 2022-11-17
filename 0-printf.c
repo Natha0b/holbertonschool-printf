@@ -13,7 +13,8 @@
 int _printf(const char *format, ...)
 {
 
-	char *traverse = NULL;
+	char *traverse = NULL, *s;
+	unsigned int c;
 	int i;
 	va_list(arg);
 
