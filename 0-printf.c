@@ -17,17 +17,17 @@ int _printf(const char *format, ...)
 	if (!format)
 		return (-1);
 
-	while (format[i] != '\0')
+	while (format[i] != '\0')   /*string until different from null*/
 	{
-		if (format[i] != '%')
+		if (format[i] != '%') 
 		{
 			_putchar(format[aux]);
 			aux++;
 			count++;
 		}
-		if (format[i] == '%')
+		if (format[i] == '%')  /*when string equals percentage*/
 		{
-			switch (format[i + 1])
+			switch (format[i + 1])  /*start of printf structure*/
 			{
 			case 'c':
 				count += function_char(valist);
