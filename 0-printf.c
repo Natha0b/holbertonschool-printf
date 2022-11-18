@@ -42,6 +42,7 @@ int _printf(const char *format, ...)
 		{
 			_putchar(format[aux]);
 			aux++;
+			count++;
 		}
 
 		if (format[i] == '%')
@@ -49,7 +50,7 @@ int _printf(const char *format, ...)
 			switch (format[i + 1])
 			{
 			case 'c':
-				count = function_char(valist);
+				count += function_char(valist);
 				aux++;
 				i++;
 				break;
@@ -61,7 +62,7 @@ int _printf(const char *format, ...)
 				break;
 
 			case 's':
-				count = function_s(valist);
+				count += function_s(valist);
 				aux++;
 				i++;
 				break;
