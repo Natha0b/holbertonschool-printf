@@ -2,7 +2,7 @@
 
 /**
  * function_char - prints the char
- * @arg: args
+ * @valist: argument
  */
 int function_char(va_list valist)
 {
@@ -10,67 +10,36 @@ int function_char(va_list valist)
 	return (1);
 }
 
-
+/**
+ * function_int - prints the char
+ * @valist: argument
+ */
+int function_int(va_list valist)
+{
+	_putchar(va_arg(valist, int) + '0');
+	return (1);
+}
 
 /**
  * function_s - prints the integer
  * @arg: args
  */
-/*
-void function_s(va_list arg)
+
+void function_s(va_list valist)
 {
 	char *s;
+	int i;
 
-	s = va_arg(arg, char *);
-	_putchar("%s", s);
+	s = va_arg(valist, char *);
+	if (s == NULL)
+		s = ("(nil)");
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		_putchar(s[i]);
+	}
+
 }
-*/
-/**
- * function_percentage - prints the percent
- * @arg: arg
- */
-/*
-void function_percentage(va_list arg)
-{
-	_putchar("%%", va_arg(arg, int));
-}
-*/
-/**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
-/*
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
-*/
-/**
- * _putchar - writes the character c to stdout
- * @s: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
-/*
-int _putchar(char *s)
-{
-	return (write(1, &s, 1));
-}
-*/
-/**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
-/*
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
-*/
+
+
+
+
