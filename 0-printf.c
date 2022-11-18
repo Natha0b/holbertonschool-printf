@@ -27,6 +27,11 @@ int _printf(const char *format, ...)
 		}
 		if (format[i] == '%')  /*when string equals percentage*/
 		{
+			/*if (format[i + 1] == '%');
+			{
+
+			}
+			*/
 			switch (format[i + 1])  /*start of printf structure*/
 			{
 			case 'c':
@@ -52,7 +57,8 @@ int _printf(const char *format, ...)
 			case '%':
 				 c = '%';
 				count += write(1, &c, 1);
-				return (1);
+				aux++;
+				i++;
 				break;
 			default:
 				continue;
