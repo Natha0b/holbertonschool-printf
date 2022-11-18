@@ -32,13 +32,25 @@ int function_s(va_list valist)
 
 	s = va_arg(valist, char *);
 	if (s == NULL)
-		s = ("(nil)");
+		s = ("(null)");
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		_putchar(s[i]);
 	}
 	return (i);
 
+}
+
+/**
+ * function_char - prints the char
+ * @valist: argument
+ */
+int function_percent(va_list valist)
+{
+
+	_putchar(va_arg(valist, int));
+		_putchar ('%');
+	return (1);
 }
 
 

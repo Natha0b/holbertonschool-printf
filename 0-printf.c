@@ -61,6 +61,12 @@ int _printf(const char *format, ...)
 				i++;
 				break;
 
+			case '%':
+				count += function_percent(valist);
+				aux++;
+				i++;
+				break;
+
 				/*
 				case '%':
 					c = '%';

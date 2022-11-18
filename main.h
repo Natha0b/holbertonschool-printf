@@ -18,6 +18,7 @@ int _printf(const char *format, ...);
 int function_char(va_list valist);
 int function_int(va_list valist);
 int function_s(va_list valist);
+int function_percent(va_list valist);
 
 /*
 int _strlen(char *s);
