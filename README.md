@@ -26,7 +26,7 @@ will print the following line (including the newline character \n):
 - Note that we will not provide the _putchar function for this project
 
 ## Resources📚
-(Secrets of printf)[https://holbertonintranet.s3.amazonaws.com/uploads/misc/2022/11/d38f88e96a617135804dca9f9c49632751e06aa7.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOU5BHMTQX4%2F20221118%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221118T213113Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=0d62b00df270eb583a92b9609c78d34fbc961993ec081ef7470de0da1d301574]
+[Secrets of printf](https://holbertonintranet.s3.amazonaws.com/uploads/misc/2022/11/d38f88e96a617135804dca9f9c49632751e06aa7.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOU5BHMTQX4%2F20221118%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221118T213113Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=0d62b00df270eb583a92b9609c78d34fbc961993ec081ef7470de0da1d301574)
 *Man or help*
 - write (man 2 write)
 - malloc (man 3 malloc)
