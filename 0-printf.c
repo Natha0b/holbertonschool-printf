@@ -13,7 +13,6 @@
 int _printf(const char *format, ...)
 {
 	va_list valist;
-	char *traverse = NULL;
 	int i, aux = 0;
 	int count = 0;
 
@@ -24,13 +23,6 @@ int _printf(const char *format, ...)
 
 	for (i = 0; format[i] != '\0'; i++)
 	{
-	}
-
-	traverse = malloc(i + 1);
-
-	if (traverse == NULL)
-	{
-		return (0);
 	}
 
 	i = 0;
