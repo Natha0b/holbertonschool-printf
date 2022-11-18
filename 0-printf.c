@@ -1,8 +1,4 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdarg.h>
-#include <unistd.h>
 
 /**
  *_printf- print a variable
@@ -61,13 +57,7 @@ int _printf(const char *format, ...)
 				aux++;
 				i++;
 				break;
-				/*
-							case '%':
-								count += function_percent(valist);
-								aux++;
-								i++;
-								break;
-				*/
+		
 			case '%':
 				 c = '%';
 				count += write(1, &c, 1);

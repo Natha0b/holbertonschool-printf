@@ -3,6 +3,7 @@
 /**
  * function_char - prints the char
  * @valist: argument
+ * Return: One
  */
 int function_char(va_list valist)
 {
@@ -13,6 +14,7 @@ int function_char(va_list valist)
 /**
  * function_int - prints the char
  * @valist: argument
+ * Return: One
  */
 int function_int(va_list valist)
 {
@@ -22,7 +24,8 @@ int function_int(va_list valist)
 
 /**
  * function_s - prints the integer
- * @arg: args
+ * @valist: argumets
+ * Return: One
  */
 
 int function_s(va_list valist)
@@ -39,16 +42,3 @@ int function_s(va_list valist)
 	}
 	return (i);
 }
-
-/**
- * function_percent - prints the char
- * @valist: argument
- */
-/*
-int function_percent(va_list valist)
-{
-	_putchar(va_arg(valist, int));
-	_putchar('%');
-	return (1);
-}
-*/
