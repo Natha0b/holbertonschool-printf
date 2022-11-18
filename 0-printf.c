@@ -15,6 +15,7 @@ int _printf(const char *format, ...)
 	va_list valist;
 	int i, aux = 0;
 	int count = 0;
+	char c;
 
 	va_start(valist, format);
 
@@ -60,19 +61,18 @@ int _printf(const char *format, ...)
 				aux++;
 				i++;
 				break;
-
-			case '%':
-				count += function_percent(valist);
-				aux++;
-				i++;
-				break;
-
 				/*
-				case '%':
-					c = '%';
-					write(1, &c, 1);
-					break;
-					*/
+							case '%':
+								count += function_percent(valist);
+								aux++;
+								i++;
+								break;
+				*/
+			case '%':
+				 c = '%';
+				count += write(1, &c, 1);
+				return (1);
+				break;
 
 			default:
 

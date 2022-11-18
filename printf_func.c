@@ -38,19 +38,17 @@ int function_s(va_list valist)
 		_putchar(s[i]);
 	}
 	return (i);
-
 }
 
 /**
- * function_char - prints the char
+ * function_percent - prints the char
  * @valist: argument
  */
+/*
 int function_percent(va_list valist)
 {
-
 	_putchar(va_arg(valist, int));
-		_putchar ('%');
+	_putchar('%');
 	return (1);
 }
-
-
+*/
