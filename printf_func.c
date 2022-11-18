@@ -42,5 +42,3 @@ int function_s(va_list valist)
 }
 
 
-
-

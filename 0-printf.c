@@ -21,10 +21,6 @@ int _printf(const char *format, ...)
 	if (!format)
 		return (0);
 
-	for (i = 0; format[i] != '\0'; i++)
-	{
-	}
-
 	i = 0;
 
 	while (format[i] != '\0')
