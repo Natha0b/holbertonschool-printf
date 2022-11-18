@@ -25,7 +25,7 @@ int function_int(va_list valist)
  * @arg: args
  */
 
-void function_s(va_list valist)
+int function_s(va_list valist)
 {
 	char *s;
 	int i;
@@ -37,6 +37,7 @@ void function_s(va_list valist)
 	{
 		_putchar(s[i]);
 	}
+	return (i);
 
 }
 

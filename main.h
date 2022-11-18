@@ -17,7 +17,7 @@ int _putchar(char c);
 int _printf(const char *format, ...);
 int function_char(va_list valist);
 int function_int(va_list valist);
-void function_s(va_list valist);
+int function_s(va_list valist);
 
 /*
 int _strlen(char *s);

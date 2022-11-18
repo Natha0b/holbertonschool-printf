@@ -15,6 +15,7 @@ int _printf(const char *format, ...)
 	va_list valist;
 	char *traverse = NULL;
 	int i, aux = 0;
+	int count = 0;
 
 	va_start(valist, format);
 
@@ -48,7 +49,7 @@ int _printf(const char *format, ...)
 			switch (format[i + 1])
 			{
 			case 'c':
-				function_char(valist);
+				count = function_char(valist);
 				aux++;
 				i++;
 				break;
@@ -60,7 +61,7 @@ int _printf(const char *format, ...)
 				break;
 
 			case 's':
-				function_s(valist);
+				count = function_s(valist);
 				aux++;
 				i++;
 				break;
@@ -88,5 +89,5 @@ int _printf(const char *format, ...)
 	}
 
 	va_end(valist);
-	return (aux);
+	return (count);
 }
