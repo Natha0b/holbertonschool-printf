@@ -17,22 +17,19 @@ int _printf(const char *format, ...)
 	if (!format)
 		return (-1);
 
-	while (format[i] != '\0')   /*string until different from null*/
+	while (format[i] != '\0') /*string until different from null*/
 	{
-		if (format[i] != '%') 
+		if (format[i] != '%')
 		{
+
 			_putchar(format[aux]);
 			aux++;
 			count++;
 		}
-		if (format[i] == '%')  /*when string equals percentage*/
+		if (format[i] == '%') /*when string equals percentage*/
 		{
-			/*if (format[i + 1] == '%');
-			{
-
-			}
-			*/
-			switch (format[i + 1])  /*start of printf structure*/
+			
+			switch (format[i + 1]) /*start of printf structure*/
 			{
 			case 'c':
 				count += function_char(valist);
@@ -55,13 +52,15 @@ int _printf(const char *format, ...)
 				i++;
 				break;
 			case '%':
-				 c = '%';
+				c = '%';
 				count += write(1, &c, 1);
 				aux++;
 				i++;
 				break;
 			default:
-				continue;
+				count++;
+				_putchar('%');
+				break;
 			}
 			aux++;
 		}
