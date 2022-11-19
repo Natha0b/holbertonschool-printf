@@ -26,8 +26,8 @@ int _printf(const char *format, ...)
 		}
 		if (format[i] == '%') /*when string equals percentage*/
 		{
-			count += get_case(format, i, valist, aux, count);
-			aux++, i++;
+			count = get_case(format, &i, valist, &aux, count, i, aux);
+			aux++;
 		}
 		i++;
 	}

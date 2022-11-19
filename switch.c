@@ -1,9 +1,10 @@
 #include "main.h"
 
-int get_case(const char *format, int i, va_list valist, int aux,
+int get_case(const char *format, int *p, va_list valist, int *k,
 			 int count, ...)
 {
 	char c;
+	int i = *p, aux = *k;
 
 	switch (format[i + 1]) /*start of printf structure*/
 	{
@@ -40,5 +41,7 @@ int get_case(const char *format, int i, va_list valist, int aux,
 
 		break;
 	}
+	*p = i;
+	*k = aux;
 	return (count);
 }
