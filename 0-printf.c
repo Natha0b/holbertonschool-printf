@@ -11,10 +11,11 @@ int _printf(const char *format, ...)
 	va_list valist;
 	int i = 0, aux = 0, count = 0;
 	char c;
+	
 
 	va_start(valist, format);
 
-	if (!format)
+	if (!format || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 
 	while (format[i] != '\0') /*string until different from null*/
@@ -28,7 +29,7 @@ int _printf(const char *format, ...)
 		}
 		if (format[i] == '%') /*when string equals percentage*/
 		{
-			
+
 			switch (format[i + 1]) /*start of printf structure*/
 			{
 			case 'c':
@@ -58,8 +59,10 @@ int _printf(const char *format, ...)
 				i++;
 				break;
 			default:
+
 				count++;
 				_putchar('%');
+
 				break;
 			}
 			aux++;
