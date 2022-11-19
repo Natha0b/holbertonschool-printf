@@ -12,4 +12,5 @@ int function_char(va_list valist);
 int function_int(va_list valist);
 int function_s(va_list valist);
 int function_percent(va_list valist);
+int get_case(const char *format, int i, va_list valist, int aux, int count, ...);
 #endif
