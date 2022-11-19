@@ -10,35 +10,28 @@ int get_case(const char *format, int *p, va_list valist, int *k,
 	{
 	case 'c':
 		count += function_char(valist);
-		aux++;
-		i++;
+		aux++, i++;
 		break;
 	case 'd':
 		function_int(valist);
-		aux++;
-		i++;
+		aux++, i++;
 		break;
 	case 's':
 		count += function_s(valist);
-		aux++;
-		i++;
+		aux++, i++;
 		break;
 	case 'i':
 		function_int(valist);
-		aux++;
-		i++;
+		aux++, i++;
 		break;
 	case '%':
 		c = '%';
 		count += write(1, &c, 1);
-		aux++;
-		i++;
+		aux++, i++;
 		break;
 	default:
-
 		count++;
 		_putchar('%');
-
 		break;
 	}
 	*p = i;
