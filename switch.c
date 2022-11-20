@@ -13,7 +13,7 @@ int get_case(const char *format, int *p, va_list valist, int *k,
 		aux++, i++;
 		break;
 	case 'd':
-		function_int(valist);
+		count += function_int(valist);
 		aux++, i++;
 		break;
 	case 's':
@@ -21,7 +21,7 @@ int get_case(const char *format, int *p, va_list valist, int *k,
 		aux++, i++;
 		break;
 	case 'i':
-		function_int(valist);
+		count += function_int(valist);
 		aux++, i++;
 		break;
 	case '%':
