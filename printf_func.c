@@ -18,7 +18,7 @@ int function_char(va_list valist)
  */
 int function_int(va_list valist)
 {
-	int n, counter = 1, div = 1;
+	int n, counter = 0, div = 1;
 	unsigned int tmp;
 
 	n = va_arg(valist, int);
@@ -27,6 +27,7 @@ int function_int(va_list valist)
 	{
 		_putchar('-');
 		tmp = n * -1;
+		counter++;
 	}
 	else
 		tmp = n;
