@@ -19,7 +19,6 @@ int function_char(va_list valist)
 int function_int(va_list valist)
 {
 	_putchar(va_arg(valist, int) + '0');
-
 	return (1);
 }
 

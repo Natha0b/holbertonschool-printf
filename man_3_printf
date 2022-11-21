@@ -1,0 +1,115 @@
+FUNCTION PRINTF 14/11/2022/Manual
+
+.SH NAME
+	Printf is the function we use to make a formatted printout.
+	Printf= the f stands for input by formatted output
+
+.SH SYNOSIS
+		#include "main.h"
+		#include <stdio.h>
+		#include <stdlib.h>	
+		#include <stdarg.h>
+		#include <unistd.h>
+int _putchar(char c);
+int _printf(const char *format, ...);
+int function_char(va_list valist);
+int function_int(va_list valist);
+int function_s(va_list valist);
+int function_percent(va_list valist);
+int get_case(const char *format, int *p, va_list valist, int *k, int count, ...);
+
+.SH DESCRIPTION
+The _putchar function prints character and string output.
+The _printf function is the main function we use for creating the print structure with different formats.
+the function function_char is equivalent to the function printf(%c) printing out characters.
+the function function_int is equivalent to the function printf(%d, %i) printing integers.
+the function function_s is equivalent to the function printf(%s) printing strings.
+the function function_percent is equivalent to the function printf(%%) printing the percentage character.
+the function get_case this function executes our previous functions in our main file.
+
+.SH FLAG CHARACTERS
+\ 	escape the following character
+\\ 	print a backslash
+"	start or end of string
+\	print a double quotation mark
+start or end of a character constant
+\	print a single quotation mark
+' 	start of a format specification
+\% 	print a percent sign
+
+
+\a 	audible alert (bell)
+\b 	backspace
+\f 	form feed
+\n 	new line (line break)
+\r 	carriage return
+\T 	Tab key
+\	vertical tab key
+
+.SH CONVERSION SPECIFIERS
+
+A character that specifies the type of conversion to be applied.
+The conversion specifiers and their meanings are:
+
+%c 	print a single character
+%d 	print a decimal number (base 10)
+%e 	print an exponential floating-point number
+%f 	print a floating point number
+%g 	print a general-format floating-point number
+%i 	print an integer number in base 10
+%o 	print an octal (base 8) number
+%s 	print a character string
+%u 	print an unsigned decimal number (base 10)
+%x 	print a number in hexagonal (base 16)
+%% 	print a percent sign (also function)
+
+.SH RETURN VALUE
+Upon successful return, these functions return the number of characters printed (excluding the null  byte  used  to  end  output  to strings).
+If an output error is encountered, a negative value is returned.
+
+.SH EXAMPLES
+
+#include "main.h"
+
+/**
+ *_printf- print a variable
+ *@format: variable printf
+ *Return: the number of characters printed
+ */
+
+int _printf(const char *format, ...)
+{
+	va_list valist;
+	int i = 0, aux = 0, count = 0;
+
+	va_start(valist, format);
+
+	if (!format || (format[0] == '%' && format[1] == '\0'))
+		return (-1);
+
+	while (format[i] != '\0') /*string until different from null*/
+	{
+		if (format[i] != '%')
+		{
+			_putchar(format[aux]);
+			aux++;
+			count++;
+		}
+		if (format[i] == '%') /*when string equals percentage*/
+		{
+			count = get_case(format, &i, valist, &aux, count, i, aux);
+			aux++;
+		}
+		i++;
+	}
+	va_end(valist);
+	return (count);
+}
+AUTHORS
+
+Nathaly Ortiz
+Charline Mosquera
+Yurany Ulchur
+
+								25/11/2022
+	

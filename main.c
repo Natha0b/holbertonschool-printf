@@ -13,6 +13,7 @@ int main(void)
 
 	len = _printf("%d", 1024);
 	len2 = printf("%d", 1024);
+	printf("%d", len2);
 	fflush(stdout);
 	if (len != len2)
 	{
