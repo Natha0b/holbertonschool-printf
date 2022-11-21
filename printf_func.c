@@ -18,8 +18,32 @@ int function_char(va_list valist)
  */
 int function_int(va_list valist)
 {
-	_putchar(va_arg(valist, int) + '0');
-	return (1);
+	int n, counter = 0, div = 1;
+	unsigned int tmp;
+
+	n = va_arg(valist, int);
+
+	if (n < 0)
+	{
+		_putchar('-');
+		tmp = n * -1;
+		counter++;
+	}
+	else
+		tmp = n;
+
+	while (tmp / div > 9)
+		div *= 10;
+
+	while (div != 0)
+	{
+		_putchar(tmp / div + '0');
+		tmp %= div;
+		div /= 10;
+		counter++;
+	}
+
+	return (counter);
 }
 
 /**
