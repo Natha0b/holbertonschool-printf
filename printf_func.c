@@ -53,3 +53,16 @@ void function_s(char *buff, va_list valist)
 		}
 	}
 }
+
+/**
+ * function_percent - prints the integer
+ * @valist: argumets
+ * Return: One
+ */
+
+void function_percent(char *buff, va_list valist)
+{
+	int len = _strlen(buff);
+	(void)valist;
+	buff[len] = '%';
+}
