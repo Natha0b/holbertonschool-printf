@@ -7,7 +7,7 @@
  */
 int function_char(va_list valist)
 {
-	_putchar(va_arg(valist, int));
+	write(1, valist, 1);
 	return (1);
 }
 

@@ -9,28 +9,35 @@
 int _printf(const char *format, ...)
 {
 	va_list valist;
-	int i = 0, aux = 0, count = 0;
+	char *buff;
+	int i = 0, aux = 0, len = 0;
 
 	va_start(valist, format);
 
-	if (!format || (format[0] == '%' && format[1] == '\0'))
+	buff = malloc(1024);
+
+	if (!format || !buff || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 
 	while (format[i] != '\0') /*string until different from null*/
 	{
 		if (format[i] != '%')
 		{
-			_putchar(format[aux]);
+			buff[aux] = format[i];
 			aux++;
-			count++;
 		}
-		if (format[i] == '%') /*when string equals percentage*/
+
+		if (buff[aux] == '%') /*when string equals percentage*/
 		{
-			count = get_case(format, &i, valist, &aux, count, i, aux);
+			get_case(format, i, valist, aux);
 			aux++;
 		}
 		i++;
 	}
+	len = _strlen(buff);
+	write(1, buff, len);
+
 	va_end(valist);
-	return (count);
+	free(buff);
+	return (aux);
 }

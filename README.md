@@ -4,13 +4,6 @@
 Printf is the function we use to make a formatted printout. 
 Printf= the f stands for input by formatted output
 
-# EXAMPLE IN C:👇
-
-	  printf("Color: %s, Number1: %d, Number2: %05d, Hexadecimal: %x, Real: %5.2f.\n", "red", 12345, 89, 255, 3.14);
-will print the following line (including the newline character \n):
-
-	 Color: red, Number1: 12345, Number2: 00089, Hexadecimal: ff, Real: 3.14.
-
 # Requirements📌
 - Allowed editors: vi, vim, emacs
 - All your files will be compiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89
@@ -28,7 +21,7 @@ will print the following line (including the newline character \n):
 ## Resources📚
 [Secrets of printf](https://holbertonintranet.s3.amazonaws.com/uploads/misc/2022/11/d38f88e96a617135804dca9f9c49632751e06aa7.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOU5BHMTQX4%2F20221118%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221118T213113Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=0d62b00df270eb583a92b9609c78d34fbc961993ec081ef7470de0da1d301574)
 
-*Man or help*
+Man or help
 - write (man 2 write)
 - malloc (man 3 malloc)
 - free (man 3 free)
@@ -49,13 +42,10 @@ The flags in the format string must have the following structure (fields in squa
 | ------------ | ------------ |
 | %d %i | Signed decimal conversion of an integer |
 | %c |   Prints the corresponding ASCII character |
-| %x %X | Unsigned hexadecimal conversion  |
-| %e %E | Signed floating point conversion to scientific notation  |
-| %f F | Conversion to signed floating point, using decimal point  |
-| %g %G |   Conversion to floating point, using the notation requiring the least amount of space |
+| %s | Character string (ending with '\0')  |
 | %o | Unsigned octal conversion of an integer
 | %u | Unsigned decimal conversion of an integer  |
-| %s | Character string (ending with '\0')  |
+| %x %X | Unsigned hexadecimal conversion  |
 | %% | Prints the symbol % |
 
 
