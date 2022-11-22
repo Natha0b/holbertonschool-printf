@@ -79,22 +79,11 @@ void function_percent(char *buff, va_list valist)
  * Return: integer
  */
 
-int check_case(char *s)
+int check_case(char s)
 {
-	printf_t ops[] = {
-		{"c", function_char},
-		{"s", function_s},
-		{"d", function_int},
-		{"i", function_int},
-		{"%", function_percent},
-		{NULL, NULL}};
-	int i;
-	for (i = 0; ops[i].printf != NULL; i++)
+	if (s == 'c' || s == 's' || s == 'd' || s == 'i' || s == '%')
 	{
-		if (s == ops[i].printf)
-		{
-			return (1);
-		}
+		return (1);
 	}
 	return (0);
 }
