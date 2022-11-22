@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+ **get_case - function struct
+ *@format: variable string
+ *@i: variable integrer
+ *Return: Null
+ */
+
 void (*get_case(const char *format, int i))(char *buff, va_list valist)
 {
 	int j = 0;

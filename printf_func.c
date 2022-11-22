@@ -1,22 +1,24 @@
 #include "main.h"
 
 /**
- * function_char - prints the char
+ * function_char - prints the
+ * @buff: variable char
  * @valist: argument
- * Return: One
  */
 void function_char(char *buff, va_list valist)
 {
 	char s;
 	int len = _strlen(buff);
+
 	s = va_arg(valist, int);
+
 	buff[len] = s;
 }
 
 /**
  * function_int - prints the char
+ * @buff: variable char
  * @valist: argument
- * Return: One
  */
 
 void function_int(char *buff, va_list valist)
@@ -26,8 +28,8 @@ void function_int(char *buff, va_list valist)
 
 /**
  * function_s - prints the integer
+ * @buff: variable char
  * @valist: argumets
- * Return: One
  */
 
 void function_s(char *buff, va_list valist)
@@ -56,8 +58,8 @@ void function_s(char *buff, va_list valist)
 
 /**
  * function_percent - prints the integer
+ * @buff: variable char
  * @valist: argumets
- * Return: One
  */
 
 void function_percent(char *buff, va_list valist)
