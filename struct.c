@@ -1,34 +1,22 @@
 #include "main.h"
 
-int get_case(const char *format, ...)
+void (*get_case(const char *format, int i))(char *buff, va_list valist)
 {
-    int i = 0, aux;
-    printf_t ops[] = {
-        {"c", function_char},
-        {"s", function_s},
-        {"d", function_int},
-        {"i", function_int},
-        {NULL, NULL}};
+	int j = 0;
+	printf_t ops[] = {
+		{"c", function_char},
+		{"s", function_s},
+		{"d", function_int},
+		{"i", function_int},
+		{NULL, NULL}};
 
-    va_list valist;
-
-    va_start(valist, format);
-
-    while (format != NULL && format[i] != '\0')
-    {
-        aux = 0;
-        while (aux < 5)
-        {
-            if (format[i] == *ops[aux].printf)
-            {
-                ops[aux].f(valist);
-                break;
-            }
-            aux++;
-        }
-        i++;
-    }
-    va_end(valist);
-    printf("\n");
-	return (*format);
+	while (ops[j].printf != NULL)
+	{
+		if (format[i + 1] == *ops[j].printf)
+		{
+			return (ops[j].f);
+		}
+		j++;
+	}
+	return (NULL);
 }

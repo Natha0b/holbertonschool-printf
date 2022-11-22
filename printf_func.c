@@ -5,10 +5,12 @@
  * @valist: argument
  * Return: One
  */
-int function_char(va_list valist)
+void function_char(char *buff, va_list valist)
 {
-	write(1, valist, 1);
-	return (1);
+	char s;
+	int len = _strlen(buff);
+	s = va_arg(valist, int);
+	buff[len + 1] = s;
 }
 
 /**
@@ -16,34 +18,10 @@ int function_char(va_list valist)
  * @valist: argument
  * Return: One
  */
-int function_int(va_list valist)
+
+void function_int(char *buff, va_list valist)
 {
-	int n, counter = 0, div = 1;
-	unsigned int tmp;
-
-	n = va_arg(valist, int);
-
-	if (n < 0)
-	{
-		_putchar('-');
-		tmp = n * -1;
-		counter++;
-	}
-	else
-		tmp = n;
-
-	while (tmp / div > 9)
-		div *= 10;
-
-	while (div != 0)
-	{
-		_putchar(tmp / div + '0');
-		tmp %= div;
-		div /= 10;
-		counter++;
-	}
-
-	return (counter);
+	buff[0] = va_arg(valist, int);
 }
 
 /**
@@ -52,17 +30,26 @@ int function_int(va_list valist)
  * Return: One
  */
 
-int function_s(va_list valist)
+void function_s(char *buff, va_list valist)
 {
-	char *s;
+	char *s, *null = "(null)";
 	int i;
+
+	int len = _strlen(buff);
 
 	s = va_arg(valist, char *);
 	if (s == NULL)
-		s = ("(null)");
-	for (i = 0; s[i] != '\0'; i++)
 	{
-		_putchar(s[i]);
+		for (i = 0; null[i] != '\0'; i++, len++)
+		{
+			buff[len] = null[i];
+		}
 	}
-	return (i);
+	else
+	{
+		for (i = 0; s[i] != '\0'; i++, len++)
+		{
+			buff[len] = s[i];
+		}
+	}
 }

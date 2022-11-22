@@ -14,7 +14,7 @@ int _printf(const char *format, ...)
 
 	va_start(valist, format);
 
-	buff = malloc(1024);
+	buff = malloc(2000);
 
 	if (!format || !buff || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
@@ -27,10 +27,11 @@ int _printf(const char *format, ...)
 			aux++;
 		}
 
-		if (buff[aux] == '%') /*when string equals percentage*/
+		if (format[i] == '%') /*when string equals percentage*/
 		{
-			get_case(format, i, valist, aux);
-			aux++;
+			get_case(format, i)(buff, valist);
+			i++;
+			aux = _strlen(buff);
 		}
 		i++;
 	}
@@ -39,5 +40,5 @@ int _printf(const char *format, ...)
 
 	va_end(valist);
 	free(buff);
-	return (aux);
+	return (len);
 }
