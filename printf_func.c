@@ -9,10 +9,9 @@ void function_char(char *buff, va_list valist)
 {
 	char s;
 	int len = _strlen(buff);
-
 	s = va_arg(valist, int);
-
 	buff[len] = s;
+	exit(1);
 }
 
 /**

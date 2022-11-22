@@ -17,10 +17,12 @@ int _printf(const char *format, ...)
 	buff = malloc(2000);
 
 	if (!format || !buff || (format[0] == '%' && format[1] == '\0'))
+
 		return (-1);
 
 	while (format[i] != '\0') /*string until different from null*/
 	{
+
 		if (format[i] != '%')
 		{
 			buff[aux] = format[i];
@@ -37,7 +39,6 @@ int _printf(const char *format, ...)
 	}
 	len = _strlen(buff);
 	write(1, buff, len);
-
 	va_end(valist);
 	free(buff);
 	return (len);
