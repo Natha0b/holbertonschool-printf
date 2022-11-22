@@ -13,15 +13,11 @@ void function_char(char *buff, va_list valist)
 	if (!s)
 	{
 
-		write (1,"\0\0",2);
+		write(1, "\0\0", 2);
 		free(buff);
 		exit(0);
 	}
 	buff[len] = s;
-
-
-	
-	
 }
 
 /**
@@ -76,5 +72,29 @@ void function_percent(char *buff, va_list valist)
 	int len = _strlen(buff);
 	(void)valist;
 	buff[len] = '%';
+}
+/**
+ * check_case - prints the integer
+ * @s: variable char
+ * Return: integer
+ */
 
+int check_case(char *s)
+{
+	printf_t ops[] = {
+		{"c", function_char},
+		{"s", function_s},
+		{"d", function_int},
+		{"i", function_int},
+		{"%", function_percent},
+		{NULL, NULL}};
+	int i;
+	for (i = 0; ops[i].printf != NULL; i++)
+	{
+		if (s == ops[i].printf)
+		{
+			return (1);
+		}
+	}
+	return (0);
 }
