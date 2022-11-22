@@ -10,7 +10,18 @@ void function_char(char *buff, va_list valist)
 	char s;
 	int len = _strlen(buff);
 	s = va_arg(valist, int);
+	if (!s)
+	{
+
+		write (1,"\0\0",2);
+		free(buff);
+		exit(0);
+	}
 	buff[len] = s;
+
+
+	
+	
 }
 
 /**
@@ -65,4 +76,5 @@ void function_percent(char *buff, va_list valist)
 	int len = _strlen(buff);
 	(void)valist;
 	buff[len] = '%';
+
 }

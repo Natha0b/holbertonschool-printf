@@ -36,6 +36,7 @@ int _printf(const char *format, ...)
 			aux = _strlen(buff);
 		}
 		i++;
+	
 	}
 	len = _strlen(buff);
 	write(1, buff, len);
