@@ -19,7 +19,6 @@ int _printf(const char *format, ...)
 	{
 		return (-1);
 	}
-
 	while (format[i] != '\0') /*string until different from null*/
 	{
 		if (format[i] != '%')
@@ -27,7 +26,7 @@ int _printf(const char *format, ...)
 			buff[aux] = format[i];
 			aux++;
 		}
-		if (format[i] == '%' && check_case(format[i + 1]) == 1) /*when string equals percentage*/
+		if (format[i] == '%' && check_case(format[i + 1]) == 1)
 		{
 			get_case(format, i)(buff, valist);
 			i++;

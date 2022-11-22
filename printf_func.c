@@ -9,6 +9,7 @@ void function_char(char *buff, va_list valist)
 {
 	char s;
 	int len = _strlen(buff);
+
 	s = va_arg(valist, int);
 	if (!s)
 	{
@@ -85,5 +86,6 @@ int check_case(char s)
 	{
 		return (1);
 	}
+
 	return (0);
 }
