@@ -23,7 +23,7 @@ void function_char(char *buff, va_list valist)
 
 /**
  * function_int - prints the char
- * @value: pointer char
+ * @buff: pointer char
  * @valist: argument
  */
 
@@ -40,9 +40,10 @@ void function_int(char *buff, va_list valist)
 
 	if (n < 0)
 	{
-		write(1, "-", 1);
+		buff[len] = '-';
 		tmp = n * -1;
 		counter++;
+		len++;
 	}
 	else
 		tmp = n;
