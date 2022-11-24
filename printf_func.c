@@ -125,16 +125,20 @@ int check_case(char s)
 void function_binary(char *buff, va_list valist)
 {
 	int num, i = 0, counter = 0;
-	char bin[50], residue;
+	char bin[200], residue;
 
 	num = va_arg(valist, int);
-
+	if (num == 0)
+	{
+		buff[i] = '0';
+	}
+	
 	while (num != 0)
 	{
 		residue = '0' + (num % 2);
 		bin[i] = residue;
 		i++;
-		num /= 2;
+		num = num / 2;
 		counter++;
 	}
 	i = 0;
@@ -143,4 +147,5 @@ void function_binary(char *buff, va_list valist)
 		buff[i] = bin[counter - i - 1];
 		i++;
 	}
+
 }
