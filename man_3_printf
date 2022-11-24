@@ -1,0 +1,105 @@
+FUNCTION PRINTF 14/11/2022/Manual
+
+.SH NAME
+	Printf is the function we use to make a formatted printout.
+	Printf= the f stands for input by formatted output
+
+.SH SYNOSIS
+#include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdarg.h>
+#include <unistd.h>
+int _putchar(char c);
+int _printf(const char *format, ...);
+int function_char(va_list valist);
+int function_int(va_list valist);
+int function_s(va_list valist);
+int function_percent(va_list valist);
+int get_case(const char *format, int *p, va_list valist, int *k, int count, ...);
+
+.SH DESCRIPTION
+The _putchar function prints character and string output.
+The _printf function is the main function we use for creating the print structure with different formats.
+the function function_char is equivalent to the function printf(%c) printing out characters.
+the function function_int is equivalent to the function printf(%d, %i) printing integers.
+the function function_s is equivalent to the function printf(%s) printing strings.
+the function function_percent is equivalent to the function printf(%%) printing the percentage character.
+the function get_case this function executes our previous functions in our main file.
+
+.SH CONVERSION SPECIFIERS
+
+A character that specifies the type of conversion to be applied.
+The conversion specifiers and their meanings are:
+
+%c 	print a single character
+%s 	print a character string
+%d 	print a decimal number
+%i 	print an integer number
+%u 	print an unsigned decimal number
+%o 	print an octal number
+%x 	print a number in hexagonal
+%% 	print a percent sign
+
+.SH RETURN VALUE
+Upon successful return, these functions return the number of characters printed (excluding the null  byte  used  to  end  output  to strings).
+If an output error is encountered, a negative value is returned.
+
+.SH EXAMPLES
+
+#include "main.h"
+
+/**
+ *_printf- print a variable
+ *@format: variable printf
+ *Return: the number of characters printed
+ */
+
+int _printf(const char *format, ...)
+{
+	va_list valist;
+	char *buff;
+	int i = 0, aux = 0, len = 0;
+
+	va_start(valist, format);
+
+	buff = malloc(2000);
+	if (!format || !buff || (format[0] == '%' && format[1] == '\0'))
+	{
+		return (-1);
+	}
+	while (format[i] != '\0') /*string until different from null*/
+	{
+		if (format[i] != '%')
+		{
+			buff[aux] = format[i];
+			aux++;
+		}
+		if (format[i] == '%' && check_case(format[i + 1]) == 1)
+		{
+			get_case(format, i)(buff, valist);
+			i++;
+			aux = _strlen(buff);
+		}
+		else if (format[i] == '%')
+		{
+			buff[aux] = format[i];
+
+			buff[aux + 1] = format[i + 1];
+			aux++;
+		}
+
+		i++;
+	}
+	len = _strlen(buff);
+	write(1, buff, len);
+	va_end(valist);
+	free(buff);
+	return (len);
+}
+
+AUTHORS
+
+Nathaly Ortiz [Github Nataly](https://github.com/Natha0b)
+Charline Mosquera [Github Charline](https://github.com/CharCoder)
+Yurany Ulchur[Github Yurany](https://github.com/YuranyUlchur)
