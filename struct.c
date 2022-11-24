@@ -16,6 +16,7 @@ void (*get_case(const char *format, int i))(char *buff, va_list valist)
 		{"d", function_int},
 		{"i", function_int},
 		{"b", function_binary},
+		{"r", rev_string},
 		{"%", function_percent},
 		{NULL, NULL}};
 

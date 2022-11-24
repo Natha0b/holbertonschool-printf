@@ -70,7 +70,7 @@ void function_percent(char *buff, va_list valist)
 
 int check_case(char s)
 {
-	if (s == 'c' || s == 's' || s == 'd' || s == 'i' || s == '%' || s == 'b')
+	if (s == 'c' || s == 's' || s == 'd' || s == 'i' || s == '%' || s == 'b' || s == 'r')
 	{
 		return (1);
 	}

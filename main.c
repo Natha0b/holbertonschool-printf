@@ -11,8 +11,8 @@ int main(void)
 {
 	int len, len2;
 
-	len = _printf("There is %b bytes in %b KB\n", 1024, 1);
-	len2 = printf("There is 10000000000 bytes in 1 KB\n");
+	len = _printf("%r", "\nThis sentence is retrieved from va_args!");
+	len2 = printf("!sgra_av morf deveirter si ecnetnes sihT\n");
 	fflush(stdout);
 	if (len != len2)
 	{

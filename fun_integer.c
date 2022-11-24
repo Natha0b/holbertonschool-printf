@@ -71,5 +71,28 @@ void function_binary(char *buff, va_list valist)
 		buff[i + len] = bin[counter - i - 1];
 		i++;
 	}
+}
+/**
+ * function_binary - function binary
+ * @buff: variable pointer char
+ * @valist: argumets
+ */
+void rev_string(char *buff, va_list valist)
+{
+	int len = _strlen(buff);
+	int cont = 0;
+	int x;
+	char *s;
 
+	s = va_arg(valist, char *);
+	while (s[cont] != '\0')
+	{
+		cont++;
+	}
+
+	for (x = 0; x < cont; x++)
+	{
+
+		buff[x + len] = s[cont - 1 - x];
+	}
 }

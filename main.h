@@ -27,6 +27,7 @@ void function_int(char *buff, va_list valist);
 void function_s(char *buff, va_list valist);
 void function_percent(char *buff, va_list valist);
 void function_binary(char *buff, va_list valist);
+void rev_string(char *buff, va_list valist);
 int check_case(char s);
 void (*get_case(const char *format, int i))(char *buff, va_list valist);
 
