@@ -23,13 +23,40 @@ void function_char(char *buff, va_list valist)
 
 /**
  * function_int - prints the char
- * @buff: variable char
+ * @value: pointer char
  * @valist: argument
  */
 
 void function_int(char *buff, va_list valist)
 {
-	buff[0] = va_arg(valist, int);
+	int n, counter, div;
+	unsigned int tmp;
+	int len = _strlen(buff);
+
+	(void)buff;
+	counter = 1;
+	div = 1;
+	n = va_arg(valist, int);
+
+	if (n < 0)
+	{
+		write(1, "-", 1);
+		tmp = n * -1;
+		counter++;
+	}
+	else
+		tmp = n;
+
+	while (tmp / div > 9)
+		div *= 10;
+
+	while (div != 0)
+	{
+		buff[len] = tmp / div + '0';
+		tmp %= div;
+		div /= 10;
+		counter++, len++;
+	}
 }
 
 /**
