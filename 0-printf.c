@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- *_printf- print a variable
- *@format: variable printf
+ *_printf- function printf
+ *@format: variable printf string
  *Return: the number of characters printed
  */
 

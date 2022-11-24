@@ -20,46 +20,6 @@ void function_char(char *buff, va_list valist)
 	}
 	buff[len] = s;
 }
-
-/**
- * function_int - prints the char
- * @buff: pointer char
- * @valist: argument
- */
-
-void function_int(char *buff, va_list valist)
-{
-	int n, counter, div;
-	unsigned int tmp;
-	int len = _strlen(buff);
-
-	(void)buff;
-	counter = 1;
-	div = 1;
-	n = va_arg(valist, int);
-
-	if (n < 0)
-	{
-		buff[len] = '-';
-		tmp = n * -1;
-		counter++;
-		len++;
-	}
-	else
-		tmp = n;
-
-	while (tmp / div > 9)
-		div *= 10;
-
-	while (div != 0)
-	{
-		buff[len] = tmp / div + '0';
-		tmp %= div;
-		div /= 10;
-		counter++, len++;
-	}
-}
-
 /**
  * function_s - prints the integer
  * @buff: variable char
@@ -116,38 +76,4 @@ int check_case(char s)
 	}
 
 	return (0);
-}
-/**
- * function_binary - function binary
- * @buff: variable pointer char
- * @valist:
- */
-void function_binary(char *buff, va_list valist)
-{
-	unsigned int num, i = 0, counter = 0;
-
-	char bin[200], residue;
-
-	num = va_arg(valist, int);
-	if (num == 0)
-	{
-		buff[i] = '0';
-	}
-	
-	while (num != 0)
-	{
-		residue = '0' + (num % 2);
-		bin[i] = residue;
-		i++;
-		num = num / 2;
-		counter++;
-	}
-	i = 0;
-	while (i < counter)
-	{
-
-		buff[i] = bin[counter - i - 1];
-		i++;
-	}
-
 }

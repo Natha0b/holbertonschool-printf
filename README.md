@@ -54,6 +54,6 @@ The flags in the format string must have the following structure (fields in squa
 
 
 ##  AUTHORS🖊
-Nathaly Ortiz.
-Charline Mosquera.
-Yurany Ulchur.
+Nathaly Ortiz [Github Nataly](https://github.com/Natha0b)
+Charline Mosquera [Github Charline](https://github.com/CharCoder)
+Yurany Ulchur [Github Yurany](https://github.com/YuranyUlchur)

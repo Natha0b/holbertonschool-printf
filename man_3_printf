@@ -100,6 +100,7 @@ int _printf(const char *format, ...)
 
 AUTHORS
 
-Nathaly Ortiz [Github Nataly](https://github.com/Natha0b)
-Charline Mosquera [Github Charline](https://github.com/CharCoder)
-Yurany Ulchur[Github Yurany](https://github.com/YuranyUlchur)
+Nathaly Ortiz 
+Charline Mosquera 
+Yurany Ulchur
+								25/11/2021

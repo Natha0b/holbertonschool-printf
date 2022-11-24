@@ -11,8 +11,8 @@ int main(void)
 {
 	int len, len2;
 
-	len = _printf("%b", -1024);
-	len2 = printf("11111111111111111111110000000000");
+	len = _printf("There is %b bytes in %b KB\n", 1024, 1);
+	len2 = printf("There is 10000000000 bytes in 1 KB\n");
 	fflush(stdout);
 	if (len != len2)
 	{
