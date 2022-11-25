@@ -51,6 +51,7 @@ The flags in the format string must have the following structure (fields in squa
 
 
 # Flow chart📊
+[flow chart](https://miro.com/app/board/uXjVPAddftg=/?share_link_id=600809500602)
 
 
 ##  AUTHORS🖊
