@@ -51,10 +51,13 @@ The flags in the format string must have the following structure (fields in squa
 
 
 # Flow chart📊
-[flow chart](https://miro.com/app/board/uXjVPAddftg=/?share_link_id=600809500602)
+
+[Diagram](https://miro.com/app/board/uXjVPAddftg=/?share_link_id=600809500602)
 
 
 ##  AUTHORS🖊
 Nathaly Ortiz [Github Nataly](https://github.com/Natha0b)
+
 Charline Mosquera [Github Charline](https://github.com/CharCoder)
+
 Yurany Ulchur [Github Yurany](https://github.com/YuranyUlchur)
