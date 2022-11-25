@@ -73,7 +73,7 @@ void function_binary(char *buff, va_list valist)
 	}
 }
 /**
- * function_binary - function binary
+ * rev_string - function reverse
  * @buff: variable pointer char
  * @valist: argumets
  */
