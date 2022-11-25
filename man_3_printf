@@ -63,7 +63,7 @@ int _printf(const char *format, ...)
 
 	va_start(valist, format);
 
-	buff = malloc(2000);
+	buff = malloc(3000);
 	if (!format || !buff || (format[0] == '%' && format[1] == '\0'))
 	{
 		return (-1);
