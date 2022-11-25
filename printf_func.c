@@ -13,13 +13,13 @@ void function_char(char *buff, va_list valist)
 	s = va_arg(valist, int);
 	if (!s)
 	{
-
 		write(1, "\0\0", 2);
 		free(buff);
 		exit(0);
 	}
 	buff[len] = s;
 }
+
 /**
  * function_s - prints the integer
  * @buff: variable char
