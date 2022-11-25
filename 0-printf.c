@@ -14,7 +14,8 @@ int _printf(const char *format, ...)
 
 	va_start(valist, format);
 
-	buff = malloc(300);
+	buff = malloc(3000);
+	if (!format || !buff || (format[0] == '%' && format[1] == '\0'))
 	{
 		return (-1);
 	}
@@ -31,7 +32,7 @@ int _printf(const char *format, ...)
 			i++;
 			aux = _strlen(buff);
 		}
-		else if (format[i] == '%')
+		else if (format[i] == '%') /*string until it equals character %*/
 		{
 			buff[aux] = format[i];
 
